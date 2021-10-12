@@ -1,0 +1,10 @@
+beam_paths:
+  0:
+    type: airy
+    diameter: 16
+spline_interp_opts:
+        kx: 4
+        ky: 4
+freq_interp_kind: 'cubic'
+telescope_location: (49.320751, -119.620811, 545.671)
+telescope_name: TEST

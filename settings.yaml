@@ -1,0 +1,40 @@
+filing:
+  outdir: '.'   #Output file directory
+  outfile_prefix: 'sim' # Prefix for the output file name, separated by underscores
+  outfile_suffix: 'results' # Suffix for output file name
+  #outfile_name: 'sim_results' # Alternatively, give the full name
+  output_format: 'uvfits'  # Format for output. Default is uvfits, but miriad and uvh5 are also supported.
+  clobber: False        # overwrite existing files. (Default False)
+freq:
+  Nfreqs: 1    # Number of frequencies
+  channel_width: 80000.0    # Frequency channel width (Hz)
+  end_freq: 1000080000.0     # Start and end frequencies (Hz)
+  start_freq: 1000000000.0
+  #freq_array : [1.0000e+08,   1.0008e+08,   1.0016e+08, 1.0024e+08,
+  #    1.0032e+08,   1.0040e+08,   1.0048e+08, 1.0056e+08,
+  #    1.0064e+08, 1.0072e+08]
+  bandwidth: 80000.0
+sources:
+  #catalog: '../pyuvsim/data/gleam_50srcs.vot'   # Path to catalog file (txt, vot, hdf5, etc.) readable with pyradiosky.
+  #spectral_type: flat # If using the GLEAM catalog, specify the spectral type (flat, subband or spectral_index). Defaults to flat.
+  #table_name: single  # Required for non-GLEAM VO table files
+  #id_column: name  # Required for non-GLEAM VO table files
+  #flux_columns: Si  # Required for non-GLEAM VO table files
+  #ra_column: RAJ2000  # Recommended for non-GLEAM VO table files
+  #dec_column: DEJ2000  # Recommended for non-GLEAM VO table files
+  catalog: 'mock'       # Alternatively, use 'mock' to use a builtin catalog).
+  mock_arrangement: 'zenith'    # If using the mock catalog, specify which one. Additional mock keywords are specified here.
+telescope:
+  array_layout: 'array_layout.txt'    # Antenna layout csv file
+  telescope_config_name: 'telescope_metadata.yaml'  # Telescope metadata file.
+time:
+  Ntimes: 1        # Number of times.
+  integration_time: 1.0  # Time step size  (seconds)
+  start_time: 2457458.1738949567    # Start and end times (Julian date)
+  end_time: 2457458.175168105
+  duration_hours: 0.0276
+#select: # limit which baselines are simulated. Use any UVData.select keywords (except polarizations) and/or redundant_threshold
+#  bls: [(1, 2), (3, 4), (5, 6)]
+#  ant_str: 'cross'
+#  antenna_nums: [1, 7, 9, 15]
+#  redundant_threshold: 0.1 # redundancy threshold in meters. Only simulate one baseline per redundant group
