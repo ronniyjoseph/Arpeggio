@@ -1,5 +1,5 @@
 filing:
-  outdir: '.'   #Output file directory
+  outdir: 'output/'   #Output file directory
   outfile_prefix: 'sim' # Prefix for the output file name, separated by underscores
   outfile_suffix: 'results' # Suffix for output file name
   #outfile_name: 'sim_results' # Alternatively, give the full name
@@ -25,10 +25,10 @@ sources:
   catalog: 'mock'       # Alternatively, use 'mock' to use a builtin catalog).
   mock_arrangement: 'zenith'    # If using the mock catalog, specify which one. Additional mock keywords are specified here.
 telescope:
-  array_layout: 'array_layout.txt'    # Antenna layout csv file
-  telescope_config_name: 'telescope_metadata.yaml'  # Telescope metadata file.
+  array_layout: 'inputs/array_layout.txt'    # Antenna layout csv file
+  telescope_config_name: 'inputs/telescope_metadata.yaml'  # Telescope metadata file.
 time:
-  Ntimes: 10000         # Number of times.
+  Ntimes: 10         # Number of times.
   integration_time: 60  # Time step size  (seconds)
   start_time: 2457458.1738949567   # Start and end times (Julian date)
   #end_time: 2457458.175168105
