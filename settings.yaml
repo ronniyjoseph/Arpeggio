@@ -28,13 +28,13 @@ telescope:
   array_layout: 'array_layout.txt'    # Antenna layout csv file
   telescope_config_name: 'telescope_metadata.yaml'  # Telescope metadata file.
 time:
-  Ntimes: 1        # Number of times.
-  integration_time: 1.0  # Time step size  (seconds)
-  start_time: 2457458.1738949567    # Start and end times (Julian date)
-  end_time: 2457458.175168105
-  duration_hours: 0.0276
-#select: # limit which baselines are simulated. Use any UVData.select keywords (except polarizations) and/or redundant_threshold
-#  bls: [(1, 2), (3, 4), (5, 6)]
-#  ant_str: 'cross'
-#  antenna_nums: [1, 7, 9, 15]
-#  redundant_threshold: 0.1 # redundancy threshold in meters. Only simulate one baseline per redundant group
+  Ntimes: 10000         # Number of times.
+  integration_time: 60  # Time step size  (seconds)
+  start_time: 2457458.1738949567   # Start and end times (Julian date)
+  #end_time: 2457458.175168105
+  #duration_hours: 0.0276
+  #select: # limit which baselines are simulated. Use any UVData.select keywords (except polarizations) and/or redundant_threshold
+  #  bls: [(1, 2), (3, 4), (5, 6)]
+  #  ant_str: 'cross'
+  #  antenna_nums: [1, 7, 9, 15]
+  #  redundant_threshold: 0.1 # redundancy threshold in meters. Only simulate one baseline per redundant group
