@@ -1,6 +1,6 @@
 filing:
-  outdir: 'output/'   #Output file directory
-  outfile_prefix: 'sim' # Prefix for the output file name, separated by underscores
+  outdir: '/Users/ronniyjoseph/Sync/MSI_Fellowship/Arpeggio/output/'   #Output file directory
+  outfile_prefix: 'long' # Prefix for the output file name, separated by underscores
   outfile_suffix: 'results' # Suffix for output file name
   #outfile_name: 'sim_results' # Alternatively, give the full name
   output_format: 'uvfits'  # Format for output. Default is uvfits, but miriad and uvh5 are also supported.
