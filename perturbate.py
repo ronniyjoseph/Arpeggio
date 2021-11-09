@@ -6,6 +6,8 @@ to perturb idealised cases etc.
 import numpy as np
 from scipy.constants import Boltzmann as k_B
 
+
+
 class ThermalNoise:
     def __init__(self, uvdata=None, T_sys=30, channel_width=40e3, t_integrate=120, A_eff=4**2):
         #TODO figure out from pyvudata what
