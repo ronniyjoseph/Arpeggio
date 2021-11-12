@@ -14,6 +14,12 @@ class AntennaGains:
 
     """
     def __init__(self, variance=0.1):
+        """
+
+        Parameters
+        ----------
+        variance
+        """
         #TODO bandpass implementation
         #TODO dealing with polarization
         self.variance = variance
@@ -28,8 +34,11 @@ class AntennaGains:
         self.gains = np.random.uniform(1, self.variance, size= shape)\
                      +1j*np.random.normal(0, self.variance, size=shape)
         map = uvdata.baseline_to_antnums(uvdata.baseline_array)
-        uvdata.data_array[:,0,:,1] *= self.gains[map[0],:]*np.conj(self.gains[map[1],:])
+        uvdata.data_array[:,0,:,0] *= self.gains[map[0],:]*np.conj(self.gains[map[1],:])
         return uvdata
+
+    def write(self):
+        return
 
 class ThermalNoise:
     """
