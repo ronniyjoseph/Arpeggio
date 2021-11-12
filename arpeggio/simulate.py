@@ -4,8 +4,8 @@ Defines a class and relevant functions that provides an interface
 to setup up a simulation pass along user inputs etc.
 """
 
-from generate import VisibilityEngine
-
+from .generate import VisibilityEngine
+from .calibrate import CorrCal
 class Simulator:
 
     def __init__(self):
@@ -29,7 +29,18 @@ class Simulator:
 
         return
 
-    def run(self):
+    def run(self, apply_gains =False, add_noise=False):
         visibilities = VisibilityEngine(settings_file = self.simulation_settings)
         visibilities.generate()
+
+        if apply_gains:
+            visibilities.apply_gains()
+        if add_noise:
+            visibilities.add_noise()
+
+        calibrator = CorrCal()
+        calibrator.setup()
+        calibrator.solve()
+        calibrator.write()
+
         return
