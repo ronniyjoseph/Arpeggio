@@ -8,7 +8,9 @@ through pyuvsim, and takes care of all ways we want to peturb the visibilities
 """
 
 import pyuvsim
-from perturbate import ThermalNoise
+from .perturbate import ThermalNoise
+from .perturbate import AntennaGains
+
 class VisibilityEngine:
 
     def __init__(self, settings_file):
@@ -21,10 +23,11 @@ class VisibilityEngine:
         return
 
     def apply_gains(self):
-
+        gains = AntennaGains()
+        self.data = gains.apply(uvdata=self.data)
         return
 
     def add_noise(self):
         noise = ThermalNoise()
-        noise.apply()
+        self.data = noise.apply(uvdata=self.data)
         return
